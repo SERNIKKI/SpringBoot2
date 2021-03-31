@@ -1,5 +1,7 @@
 package com.nikki.boot.controller;
 
+import com.nikki.boot.bean.Car;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -9,6 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 //@Controller
 @RestController //相当于ResponseBody和Controller
 public class HelloController {
+
+    @Autowired
+    private Car car;
+    @RequestMapping("/car")
+    public Car car(){
+        return car;
+    }
 
     @RequestMapping("/hello")
     public String handle01(){
