@@ -19,10 +19,10 @@ public class MainApplication {
         //1.返回IOC容器
         ConfigurableApplicationContext run = SpringApplication.run(MainApplication.class, args);
         //2.查看容器中的组件
-        String[] beanDefinitionNames = run.getBeanDefinitionNames();
-        for (String name : beanDefinitionNames) {
-            System.out.println(name);
-        }
+//        String[] beanDefinitionNames = run.getBeanDefinitionNames();
+//        for (String name : beanDefinitionNames) {
+//            System.out.println(name);
+//        }
 
         boolean user = run.containsBean("user");
         System.out.println("是否存在user:" + user);
