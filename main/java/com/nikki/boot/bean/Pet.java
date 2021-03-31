@@ -1,16 +1,14 @@
 package com.nikki.boot.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Data
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Pet {
     private String pname;
-    public Pet() {
-    }
-    public Pet(String pname) {
-        this.pname = pname;
-    }
-    public String getPname() {
-        return pname;
-    }
-    public void setPname(String pname) {
-        this.pname = pname;
-    }
 }
