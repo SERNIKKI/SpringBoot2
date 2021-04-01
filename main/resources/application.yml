@@ -1,0 +1,26 @@
+person:
+  userName: zhangsan
+  boss: true
+  birth: 2000/06/02
+  age: 20
+  pet:
+    name: 番茄
+    weight: 1
+  interests:
+    - 篮球
+    - 足球
+    - 游泳
+  animal: [小猫,小狗,小鼠]
+  score: {english: 80,math: 90}
+#    - english: 80
+#    - math: 90
+  salarys:
+    - 9999.98
+    - 9999.99
+  allPets:
+    sick:
+      - {name: 豆豆,weight: 15}
+      - {name: 小黑,weight: 16}
+    health:
+      - {name: 番茄,weight: 1}
+      - {name: 小白,weight: 1}

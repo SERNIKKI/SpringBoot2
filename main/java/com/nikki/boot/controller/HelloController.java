@@ -1,6 +1,7 @@
 package com.nikki.boot.controller;
 
 import com.nikki.boot.bean.Car;
+import com.nikki.boot.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,14 +17,20 @@ public class HelloController {
 
     @Autowired
     private Car car;
+    @Autowired
+    private Person person;
     @RequestMapping("/car")
     public Car car(){
         return car;
     }
-
     @RequestMapping("/hello")
     public String handle01(){
         log.info("正在处理hello请求...");
         return "Hello Spring Boot2";
     }
+    @RequestMapping("/person")
+    public Person person(){
+        return person;
+    }
+
 }
