@@ -32,5 +32,4 @@ public class HelloController {
     public Person person(){
         return person;
     }
-
 }
