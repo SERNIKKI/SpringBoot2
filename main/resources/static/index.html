@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>NIKKI</h1>
+测试REST风格
+<form action="/user" method="get">
+    <input value="REST-GET提交" type="submit">
+</form>
+<form action="/user" method="post">
+    <input value="REST-POST提交" type="submit">
+</form>
+<form action="/user" method="post">
+    <input name="_m" type="hidden" value="PUT">
+    <input value="REST-PUT提交" type="submit">
+</form>
+<form action="/user" method="post">
+    <input name="_m" type="hidden" value="DELETE">
+    <input value="REST-DELETE提交" type="submit">
+</form>
+</body>
+</html>

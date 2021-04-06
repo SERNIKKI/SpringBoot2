@@ -5,9 +5,7 @@ import com.nikki.boot.bean.Person;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 //@ResponseBody 表示告诉浏览器直接返回的是内容而不是跳转到别的页面
 //@Controller
@@ -31,5 +29,27 @@ public class HelloController {
     @RequestMapping("/person")
     public Person person(){
         return person;
+    }
+
+//    @RequestMapping(value = "/user",method = RequestMethod.GET)
+    @GetMapping("/user")
+    public String getUser(){
+        return "GET-NIKKI";
+    }
+//    @RequestMapping(value = "/user",method = RequestMethod.POST)
+    @PostMapping("/user")
+    public String saveUser(){
+        return "POST-NIKKI";
+    }
+//    @RequestMapping(value = "/user",method = RequestMethod.PUT)
+    @PutMapping("/user")
+    public String putUser(){
+        return "PUT-NIKKI";
+    }
+
+//    @RequestMapping(value = "/user",method = RequestMethod.DELETE)
+    @DeleteMapping("/user")
+    public String deleteUser(){
+        return "DELETE-NIKKI";
     }
 }

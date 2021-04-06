@@ -25,7 +25,13 @@ person:
       - {name: 番茄,weight: 1}
       - {name: 小白,weight: 1}
 spring:
-#  mvc:
-#    static-path-pattern: /res/**
-#  resources:
-#    static-locations: classpath:/nikki/
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  #    static-path-pattern: /res/**
+  resources:
+    add-mappings: true
+    cache:
+      period: 11000
+
