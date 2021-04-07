@@ -19,11 +19,13 @@ person:
     - 9999.99
   allPets:
     sick:
-      - {name: 豆豆,weight: 15}
-      - {name: 小黑,weight: 16}
+      - {name: 豆豆,age: 15}
+      - {name: 小黑,age: 16}
     health:
-      - {name: 番茄,weight: 1}
-      - {name: 小白,weight: 1}
+      - {name: 番茄,age: 1}
+      - {name: 小白,age: 1}
+
+#Spring相关配置
 spring:
   mvc:
     hiddenmethod:

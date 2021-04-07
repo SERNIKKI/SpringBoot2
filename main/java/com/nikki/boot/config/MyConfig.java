@@ -33,6 +33,6 @@ public class MyConfig {
     }
     @Bean("pet")
     public Pet pet(){
-        return new Pet("tomcat",5.0);
+        return new Pet("tomcat","8");
     }
 }

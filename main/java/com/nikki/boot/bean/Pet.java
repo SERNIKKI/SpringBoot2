@@ -15,5 +15,5 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix = "pet")
 public class Pet {
     private String name;
-    private Double weight;
+    private String age;
 }
