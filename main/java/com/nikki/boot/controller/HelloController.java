@@ -17,10 +17,10 @@ public class HelloController {
     private Car car;
     @Autowired
     private Person person;
-    @RequestMapping("/car")
-    public Car car(){
-        return car;
-    }
+//    @RequestMapping("/car")
+//    public Car car(){
+//        return car;
+//    }
     @RequestMapping("/hello")
     public String handle01(){
         log.info("正在处理hello请求...");
