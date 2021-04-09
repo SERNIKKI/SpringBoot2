@@ -41,7 +41,7 @@ public class ParameterTestController {
 
     //RequestBody获取请求数据
     @PostMapping("/save")
-    public Map<String,Object> postMethod(@RequestBody String content){
+    public Map<String,Object> postMethod(   String content){
         Map<String,Object> map = new HashMap<>();
         map.put("content",content);
         return map;
