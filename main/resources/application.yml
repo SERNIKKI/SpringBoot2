@@ -31,9 +31,15 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+    #开启参数方式的内容协商
+    contentnegotiation:
+      favor-parameter: true
   #    static-path-pattern: /res/**
   resources:
     add-mappings: true
     cache:
       period: 11000
-
+server:
+  servlet:
+    encoding:
+      force-request: true

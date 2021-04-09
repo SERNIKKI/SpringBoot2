@@ -59,8 +59,16 @@ public class ParameterTestController {
         map.put("path",path);
         return map;
     }
+
+
     //测试自动封装POJO
     //页面提交的属性(GET、POST都可以和对象属性进行绑定)
+    /**
+     * 1、如果是浏览器发送请求，返回xml
+     * 2、如果是ajax发送请求，返回json
+     * 3、如果是app发送请求，返回自定义数据类型
+     * 添加自定义的MessageConverter
+     */
     @PostMapping("/saveUser")
     public Person saveUser(Person person){
         return person;
