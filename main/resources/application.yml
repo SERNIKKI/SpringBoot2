@@ -24,7 +24,9 @@ person:
     health:
       - {name: 番茄,age: 1}
       - {name: 小白,age: 1}
-
+mycar:
+  name: BYD
+  price: 100000
 #Spring相关配置
 spring:
   mvc:
@@ -34,12 +36,24 @@ spring:
     #开启参数方式的内容协商
     contentnegotiation:
       favor-parameter: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    mode: HTML
+    cache: false
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    suffix: .html
   #    static-path-pattern: /res/**
   resources:
     add-mappings: true
     cache:
       period: 11000
+  banner:
+    image:
+      location: banner.jpg
 server:
   servlet:
     encoding:
       force-request: true
+  port: 21067

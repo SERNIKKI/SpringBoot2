@@ -23,10 +23,5 @@ public class MainApplication {
 //        for (String name : beanDefinitionNames) {
 //            System.out.println(name);
 //        }
-
-        boolean user = run.containsBean("user");
-        System.out.println("是否存在user:" + user);
-        boolean pet = run.containsBean("pet");
-        System.out.println("是否存在pet:" + pet);
     }
 }
