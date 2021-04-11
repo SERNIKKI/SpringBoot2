@@ -27,6 +27,7 @@ public class IndexController {
         return "login";
     }
     //重定向处理登陆成功
+    //Model
     @GetMapping("/main.html")
     public String goTOMain(HttpSession session,Model model){
         Object loginUser = session.getAttribute("loginUser");
