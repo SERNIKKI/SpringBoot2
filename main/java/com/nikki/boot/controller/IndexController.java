@@ -10,7 +10,10 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class IndexController {
     @GetMapping(value = {"/login"})
-    public String login(){
+    public String login(HttpSession session,Model model) {
+        Object msg = session.getAttribute("msg");
+        if(msg!=null)
+            model.addAttribute("msg",msg);
         return "login";
     }
 

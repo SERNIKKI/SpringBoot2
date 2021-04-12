@@ -2,6 +2,7 @@ package com.nikki.boot.config;
 
 import com.nikki.boot.bean.Pet;
 import com.nikki.boot.converter.NIKKIMessageConverter;
+import com.nikki.boot.interceptor.LoginInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
@@ -13,6 +14,7 @@ import org.springframework.web.accept.HeaderContentNegotiationStrategy;
 import org.springframework.web.accept.ParameterContentNegotiationStrategy;
 import org.springframework.web.filter.HiddenHttpMethodFilter;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.util.UrlPathHelper;
@@ -93,6 +95,15 @@ public class WebConfig{
                 HeaderContentNegotiationStrategy contentNegotiationStrategy = new HeaderContentNegotiationStrategy();
                 configurer.strategies(Arrays.asList(parameterStrategy,contentNegotiationStrategy));
             }
+            //拦截器相关功能的配置
+            @Override
+            public void addInterceptors(InterceptorRegistry registry) {
+                registry.addInterceptor(new LoginInterceptor())
+                        //要拦截那些请求
+                        .addPathPatterns("/**")
+                        //要放行那些请求
+                        .excludePathPatterns("/login");
+            }
         };
     }
 //    @Override
@@ -102,4 +113,5 @@ public class WebConfig{
 //        urlPathHelper.setRemoveSemicolonContent(false);
 //        configurer.setUrlPathHelper(urlPathHelper);
 //    }
+
 }
