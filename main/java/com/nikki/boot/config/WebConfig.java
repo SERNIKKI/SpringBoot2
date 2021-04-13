@@ -102,7 +102,7 @@ public class WebConfig{
                         //要拦截那些请求
                         .addPathPatterns("/**")
                         //要放行那些请求
-                        .excludePathPatterns("/login");
+                        .excludePathPatterns("/login","/css/**","/fonts/**","/images/**","js/**");
             }
         };
     }

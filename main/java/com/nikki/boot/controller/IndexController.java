@@ -22,7 +22,7 @@ public class IndexController {
         if(admin.getUserName().equals("nikki")&&admin.getPassword().equals("123456")){
             //保存登录成功的用户
             session.setAttribute("loginUser",admin);
-            session.setMaxInactiveInterval(3600);
+            session.setMaxInactiveInterval(36000);
             //重定向到main
             return "redirect:/main.html";
         }

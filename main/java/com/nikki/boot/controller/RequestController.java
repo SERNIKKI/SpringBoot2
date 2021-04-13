@@ -13,6 +13,7 @@ import java.util.Map;
 
 @Controller //用于页面跳转
 //@RestController
+//@RequestAttribute:获取HTTP的请求（request）对象属性值，用来传递给控制器的参数。
 public class RequestController {
     @GetMapping("/goto")
     public String goToPage(HttpServletRequest request){
