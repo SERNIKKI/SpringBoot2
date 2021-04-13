@@ -1,6 +1,7 @@
 package com.nikki.boot.controller;
 
 import com.nikki.boot.bean.User;
+import com.nikki.boot.exception.ManyUsersException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,8 @@ public class TableController {
         List<User> users = Arrays.asList(new User("zhangsan", 18), new User("lisi", 17),
                 new User("wangwu", 20));
         model.addAttribute("users",users);
+        if(users.size()>1)
+            throw new ManyUsersException();
         return "table/basic_table";
     }
     @GetMapping("/dynamic_table")
