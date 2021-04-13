@@ -26,8 +26,8 @@ public class LoginInterceptor implements HandlerInterceptor {
      */
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        String requestURI = request.getRequestURI();
-        log.info("拦截的请求有: " + requestURI);
+//        String requestURI = request.getRequestURI();
+//        log.info("拦截的请求有: " + requestURI);
         //登录检查逻辑
         HttpSession session = request.getSession();
         Object loginUser = session.getAttribute("loginUser");
