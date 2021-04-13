@@ -4,9 +4,15 @@ import ch.qos.logback.core.db.DBHelper;
 import com.nikki.boot.bean.Car;
 import com.nikki.boot.bean.Pet;
 import com.nikki.boot.bean.User;
+import com.nikki.boot.servletApi.MyFilter;
+import com.nikki.boot.servletApi.MyServlet;
+import com.nikki.boot.servletApi.MyServletContextListener;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
+import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
@@ -34,5 +40,26 @@ public class MyConfig {
     @Bean("pet")
     public Pet pet(){
         return new Pet("tomcat","8");
+    }
+
+    /**
+     * 注入servlet、filter和listener
+     */
+    @Bean
+    public ServletRegistrationBean<MyServlet> myServlet(){
+        MyServlet myServlet = new MyServlet();
+        return new ServletRegistrationBean<>(myServlet,"/test01");
+    }
+
+    @Bean
+    public FilterRegistrationBean<MyFilter> myFilter(){
+        MyFilter myFilter = new MyFilter();
+        return new FilterRegistrationBean<>(myFilter,myServlet());
+    }
+    
+    @Bean
+    public ServletListenerRegistrationBean<MyServletContextListener> myListener(){
+        MyServletContextListener myServletContextListener = new MyServletContextListener();
+        return new ServletListenerRegistrationBean<>(myServletContextListener);
     }
 }
