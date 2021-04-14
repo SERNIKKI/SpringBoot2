@@ -56,7 +56,7 @@ public class MyConfig {
         MyFilter myFilter = new MyFilter();
         return new FilterRegistrationBean<>(myFilter,myServlet());
     }
-    
+
     @Bean
     public ServletListenerRegistrationBean<MyServletContextListener> myListener(){
         MyServletContextListener myServletContextListener = new MyServletContextListener();
