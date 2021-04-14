@@ -10,10 +10,10 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 public class Line {
-    private String line_sentence;
-    private String line_writer;
-    private String line_book;
-    private String input_time;
+    private String sentence;
+    private String writer;
+    private String book;
+    private String time;
     private int cate;
     private int id;
 }

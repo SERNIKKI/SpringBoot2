@@ -2,6 +2,7 @@ package com.nikki.boot;
 
 import com.nikki.boot.bean.Pet;
 import com.nikki.boot.bean.User;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.ComponentScan;
 @SpringBootConfiguration
 @EnableAutoConfiguration
 @ComponentScan//默认为主配置文件所在的包
+@MapperScan("com.nikki.boot.mapper")
 //@SpringBootApplication
 public class MainApplication {
     public static void main(String[] args) {

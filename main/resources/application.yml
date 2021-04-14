@@ -101,3 +101,6 @@ mybatis:
   mapper-locations: classpath:mybatis/mapper/*.xml
   configuration:
     map-underscore-to-camel-case: true
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true

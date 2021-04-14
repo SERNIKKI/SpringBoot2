@@ -18,4 +18,8 @@ public class LineService {
     public int count(){
         return rhesisMapper.count();
     }
+
+    public Line getByID(int id){
+        return rhesisMapper.selectById(id);
+    }
 }

@@ -61,5 +61,9 @@ public class IndexController {
         return lineList.get(0).getId();
     }
 
-
+    @ResponseBody
+    @GetMapping("/line")
+    public String getByID(){
+        return lineService.getByID(10).toString();
+    }
 }
