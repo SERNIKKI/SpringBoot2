@@ -16,7 +16,8 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.Collections;
 
-@Configuration
+@Deprecated
+//@Configuration
 public class DataConfig {
     /**
      * 数据库相关配置
@@ -35,7 +36,10 @@ public class DataConfig {
     @Bean
     public ServletRegistrationBean<StatViewServlet> statViewServlet(){
         StatViewServlet statViewServlet = new StatViewServlet();
-        return new ServletRegistrationBean<>(statViewServlet,"/druid/*");
+        ServletRegistrationBean<StatViewServlet> statViewServletServlet = new ServletRegistrationBean<>(statViewServlet, "/druid/*");
+        statViewServletServlet.addInitParameter("loginUsername","admin");
+        statViewServletServlet.addInitParameter("loginPassword","admin0602");
+        return statViewServletServlet;
     }
     //防火墙配置
     @Bean
