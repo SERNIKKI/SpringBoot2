@@ -55,10 +55,10 @@ public class IndexController {
     @GetMapping("/rhesis")
     public int getAll(){
         long begin = System.currentTimeMillis();
-        List<Line> lineList = lineService.getRhesisMapper(0);
+        List<Line> lineList = lineService.getRhesisMapper(1);
         long end = System.currentTimeMillis();
         log.info("全页面查询时间为:{}",end-begin);
-        return lineList.size();
+        return lineList.get(0).getId();
     }
 
 

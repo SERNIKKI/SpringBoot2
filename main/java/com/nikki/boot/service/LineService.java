@@ -12,6 +12,7 @@ public class LineService {
     @Autowired
     LineMapper rhesisMapper;
     public List<Line> getRhesisMapper(int id) {
+        id = id * 500;
         return rhesisMapper.getAll(id);
     }
     public int count(){
