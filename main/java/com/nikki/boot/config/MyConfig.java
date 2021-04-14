@@ -1,6 +1,9 @@
 package com.nikki.boot.config;
 
 import ch.qos.logback.core.db.DBHelper;
+import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.druid.support.http.StatViewServlet;
+import com.alibaba.druid.support.http.WebStatFilter;
 import com.nikki.boot.bean.Car;
 import com.nikki.boot.bean.Pet;
 import com.nikki.boot.bean.User;
@@ -9,6 +12,7 @@ import com.nikki.boot.servletApi.MyServlet;
 import com.nikki.boot.servletApi.MyServletContextListener;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -17,6 +21,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
+
+import javax.sql.DataSource;
 
 //1.使用bean标签注册组件，默认为单实例
 //2.配置类本身也是组件
@@ -54,7 +60,7 @@ public class MyConfig {
     @Bean
     public FilterRegistrationBean<MyFilter> myFilter(){
         MyFilter myFilter = new MyFilter();
-        return new FilterRegistrationBean<>(myFilter,myServlet());
+        return new FilterRegistrationBean<>(myFilter, myServlet(),new DataConfig().statViewServlet());
     }
 
     @Bean
@@ -62,4 +68,6 @@ public class MyConfig {
         MyServletContextListener myServletContextListener = new MyServletContextListener();
         return new ServletListenerRegistrationBean<>(myServletContextListener);
     }
+
+
 }
