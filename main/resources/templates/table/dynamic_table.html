@@ -71,6 +71,7 @@
                                         <th>作者</th>
                                         <th>摘录</th>
                                         <th>入库时间</th>
+                                        <th>操作</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -81,6 +82,9 @@
                                         <td th:text="${line.getWriter()}">作者</td>
                                         <td th:text="${line.getSentence()}">摘录</td>
                                         <td th:text="${line.getTime()}">入库时间</td>
+                                        <td>
+                                            <a class="btn btn-danger btn-sm" type="button">删除</a>
+                                        </td>
                                     </tr>
                                     </tbody>
                                     <tfoot>
@@ -91,6 +95,7 @@
                                         <th>作者</th>
                                         <th>摘录</th>
                                         <th>入库时间</th>
+                                        <th>操作</th>
                                     </tr>
                                     </tfoot>
                                 </table>
