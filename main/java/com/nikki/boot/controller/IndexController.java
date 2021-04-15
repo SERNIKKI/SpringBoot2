@@ -51,15 +51,6 @@ public class IndexController {
 
     @Autowired
     LineService lineService;
-    @ResponseBody
-    @GetMapping("/rhesis")
-    public int getAll(){
-        long begin = System.currentTimeMillis();
-        List<Line> lineList = lineService.getRhesisMapper(1);
-        long end = System.currentTimeMillis();
-        log.info("全页面查询时间为:{}",end-begin);
-        return lineList.get(0).getId();
-    }
 
     @ResponseBody
     @GetMapping("/line")
