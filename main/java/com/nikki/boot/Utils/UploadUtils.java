@@ -3,6 +3,9 @@ package com.nikki.boot.Utils;
 
 import java.io.File;
 
+/**
+ * 上传文件工具
+ */
 public class UploadUtils {
     public final static String IMG_PATH = "static/upload/images";
     public static File getImgDirFile(){
